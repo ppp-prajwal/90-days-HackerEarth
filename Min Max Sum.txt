@@ -18,5 +18,6 @@ def miniMaxSum(arr):
 
 First approach : for loop from 0 to len-2 to get minSum in arr. for loop from 1 to len-1 to get maxSum in arr.
 Second Approch : Use inbuilt function sum(arr). Subtract arr[0] from sum(arr) to get maxSum and arr[len(arr)-1] from sum(arr) to get minSum.
+
 Points to remeber : First approach will take complexity of O(n) while second approach will tke complexity of O(1).
  
