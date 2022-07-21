@@ -1,0 +1,19 @@
+Plus Minus : Getting average of count of positive, negative and zero number in a list. 
+Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal.
+Example: arr = [-4 3 -9 0 4 1]
+There are  n elements, two positive, two negative and one zero. Their ratios are 2/5 ,2/5  and 1/5 . Results are printed as:
+0.400000
+0.400000
+0.200000
+Solution : 
+def plusMinus(arr):
+    neg_count = len(list(filter(lambda x: (x < 0), arr)))
+    pos_count = len(list(filter(lambda x: (x > 0), arr)))
+    zero_count = len(list(filter(lambda x: (x == 0), arr)))
+    print(round(pos_count / len(arr), 6))
+    print(round(neg_count / len(arr), 6))
+    print(round(zero_count / len(arr), 6))
+First approach : Inside for loop, track a count variable for each category of a number. After getting count, divide it by total no of elements in arr.
+Second Approch : Use lambda functions to filter list for each category of a number. Get length of filtered list and divide it by total no of elements in arr.
+Points to remeber : First approach will take complexity of O(n) while second approach will tke complexity of O(1).
+ 
