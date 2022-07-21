@@ -1,0 +1,22 @@
+Min Max Sum : Getting min and max sum of number in a list.
+minSum = sum of array except last element(arr[len(arr)-1]) in a list.
+maxSum = sum of array expect first element(arr[0]) in a list.
+
+Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal.
+Example: arr = [1 2 3 4 5]
+The minimum sum is 1+2+3+4 = 10 and the maximum sum is 2+3+4+5 = 14. The function prints
+
+Solution : 
+def miniMaxSum(arr):
+    # Write your code here
+    arr.sort()
+    arr_sum = 0
+    arr_sum = sum(arr)
+    max_sum = arr_sum - arr[0]
+    min_sum = arr_sum - arr[len(arr)-1]
+    print(min_sum, max_sum)
+
+First approach : for loop from 0 to len-2 to get minSum in arr. for loop from 1 to len-1 to get maxSum in arr.
+Second Approch : Use inbuilt function sum(arr). Subtract arr[0] from sum(arr) to get maxSum and arr[len(arr)-1] from sum(arr) to get minSum.
+Points to remeber : First approach will take complexity of O(n) while second approach will tke complexity of O(1).
+ 
