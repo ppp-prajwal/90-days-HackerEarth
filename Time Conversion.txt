@@ -1,0 +1,34 @@
+Time Conversion : Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+
+Example: s = 07:05:45PM
+Output : 19:05:45
+
+Solution : 
+def timeConversion(s):
+    # Write your code here
+    form = s[8:10]
+    s = s[0:8]
+    time_split = s.split(':')
+    time_split[0] = int(time_split[0])
+    if form == 'AM':
+        if time_split[0] < 12:
+            return s
+        else:
+            time_split[0] = str(time_split[0] - 12).zfill(2)
+            time_split = ':'.join(time_split)
+            return time_split
+    else :
+        if time_split[0] < 12:
+            time_split[0] = time_split[0] + 12
+            time_split = list(map(str, time_split))
+            time_split = ':'.join(time_split)
+            return time_split
+        else:
+            return s
+
+Points to remeber : zfill function to print 2 digit integer
+                    split() function to get a list
+                    list(map(data_type, list_name)) to convert list into specified data type
+                    join() function to get single element.
+                
+ 
